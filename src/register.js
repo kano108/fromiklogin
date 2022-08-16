@@ -80,10 +80,11 @@ const Register = () => {
         <input
           type="text"
           name="username"
-          onBlur={formik.handleBlur}
-          onChange={formik.handleChange}
-          value={formik.values.username}
-          placeholder="enter yor username"
+          // onBlur={formik.handleBlur}
+          // onChange={formik.handleChange}
+          // value={formik.values.username}
+          // placeholder="enter yor username"
+          {...formik.getFieldProps('username')}
           />
           {formik.touched.username && formik.errors.username && <p style={{color:"red"}}>{formik.errors.username}</p>}
         <br />
@@ -142,13 +143,8 @@ const Register = () => {
             <option value="Caneda">Caneda</option>
         </select> 
        {formik.touched.country && formik.errors.country && <p style={{color:"red"}}>{formik.errors.country}</p>}
-
         <br />
         <br />  
-
-        
-
-
         <button type="submit">Submit</button>
       </form>
     </div>
